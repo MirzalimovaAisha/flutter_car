@@ -30,6 +30,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_svg: ^2.0.10
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -65,14 +67,19 @@ flutter:
    - assets/genesis-kr-g80-facelift-sport-color-glossy-brooklyn-brown-large.png
    - assets/logo.png
    - assets/q7.png
+   - assets/red_car.png
+   - assets/car.png
+   - assets/cloud1.png
    - assets/genesis-kr-gv80-facelift-color-glossy-mauna-red-large.png
-#   -
-#   -
-#   -
-#   -
-#   -
-#   -
-#   -
+   - assets/icons/hub_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg
+   - assets/icons/car_number.svg
+   - assets/icons/bonnet.svg
+   - assets/icons/climate.svg
+   - assets/icons/vpn_key_black_24dp.svg
+   - assets/icons/my_location_black_24dp.svg
+   - assets/icons/car-svgrepo-com.svg
+   - assets/icons/car-door-svgrepo-com.svg
+   - assets/icons/window.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

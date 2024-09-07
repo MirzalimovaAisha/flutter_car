@@ -1,6 +1,7 @@
 import 'package:car/car_registration_page.dart';
 import 'package:car/registration_finish_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ChosenCarPage extends StatelessWidget {
   const ChosenCarPage({super.key});
@@ -19,8 +20,8 @@ class ChosenCarPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset('assets/logo.png', width: 70,),
-                        const SizedBox(width: 20,),
+                        SvgPicture.asset('assets/icons/hub_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg', width: 40, color: Colors.brown[400],),
+                        const SizedBox(width: 15,),
                         const Text('Drive Mate', style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),),
                       ],
                     ),
@@ -34,7 +35,7 @@ class ChosenCarPage extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Text('차량등록하기', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),),
+                            const Text('차량 등록하기', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),),
                             IconButton(
                                 onPressed: (){
                                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const CarRegistrationPage()));
@@ -67,13 +68,16 @@ class ChosenCarPage extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(5),
                           ),
-                          child: const TextField(
+                          child: TextField(
                             decoration: InputDecoration(
                                 hintText: '차량 번호',
                                 border: InputBorder.none,
-                                prefixIcon: Icon(Icons.directions_car_filled_outlined),
-                                hintStyle: TextStyle(color: Colors.grey),
-                                contentPadding: EdgeInsets.symmetric(vertical: 12)
+                                prefixIcon: Padding(
+                                  padding: const EdgeInsets.all(8),
+                                  child: SvgPicture.asset('assets/icons/car_number.svg', width: 10, height: 20, color: Colors.black,),
+                                ),
+                                hintStyle: const TextStyle(color: Colors.grey),
+                                contentPadding: const EdgeInsets.symmetric(vertical: 12)
                             ),
                           ),
                         ),
@@ -82,7 +86,7 @@ class ChosenCarPage extends StatelessWidget {
                           height: 150,
                           width: double.infinity,
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Colors.white54,
                             borderRadius: BorderRadius.circular(5),
                           ),
                           child: Column(
@@ -94,12 +98,12 @@ class ChosenCarPage extends StatelessWidget {
                             ),
                         ),
                         const SizedBox(height: 10,),
-                         Text('이미지를 선택 해 주세요', style: TextStyle(color: Colors.grey[700]),),
+                         Text('이미지를 선택 해 주세요.', style: TextStyle(color: Colors.grey[700]),),
                          Text('갤러리 앱 또는 카메라 이용하실 수 있습니다.', style: TextStyle(color: Colors.grey[700])),
                         const SizedBox(height: 30,),
                         SizedBox(
                           width: double.infinity,
-                          height: 50,
+                          height: 45,
                           child: ElevatedButton(
                               onPressed: (){
                                 Navigator.pushReplacement(
@@ -109,9 +113,12 @@ class ChosenCarPage extends StatelessWidget {
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.red[900],
-                                foregroundColor: Colors.white
+                                foregroundColor: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(7)
+                                )
                               ),
-                              child: const Text('차량 등록 후 이용하기')
+                              child: const Text('차량 등록 후 이용하기', style: TextStyle(fontSize: 15),)
                           ),
                         )
                       ],
